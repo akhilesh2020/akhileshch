@@ -77,7 +77,7 @@ public class TodayWeatherFragement extends Fragment {
         weather_panel=iteamView.findViewById(R.id.weather_panel);
         loading=iteamView.findViewById(R.id.loading);
 
-        txt_city_name.setText("wwowowo");
+
         getWeatherInformation();
         return iteamView;
     }
@@ -124,6 +124,12 @@ public class TodayWeatherFragement extends Fragment {
 
 
         ));
+    }
+
+    @Override
+    public void onDestroy() {
+        compositeDisposable.clear();
+        super.onDestroy();
     }
 
     @Override
